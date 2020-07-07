@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import * as Google from 'expo-google-app-auth'
 
 
+
 class LoginScreen extends Component {
 
   isUserEqual = (googleUser, firebaseUser) => {
@@ -39,7 +40,7 @@ class LoginScreen extends Component {
           // Sign in with credential from the Google user.
           firebase
             .auth()
-            .signInAndRetrieveDataWithCredential(credential)
+            .signInWithCredential(credential)
             .then(function(result) {
               console.log('user signed in ');
               if (result.additionalUserInfo.isNewUser) {

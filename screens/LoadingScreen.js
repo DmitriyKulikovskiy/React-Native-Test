@@ -8,6 +8,10 @@ class LoadingScreen extends Component {
     this.checkIfLoggedIn();
   }
 
+  componentWillUnmount(){
+    this.checkIfLoggedIn();
+  }
+
   checkIfLoggedIn = () => {
     firebase.auth().onAuthStateChanged(
       function(user) {
